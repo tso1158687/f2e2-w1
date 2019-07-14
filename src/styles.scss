@@ -6,3 +6,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+// variable
+$deepPink:#FF4384;
+$lightPink:#FFEDF7;
+$deepBlue:#003164;
+$white:#ffffff;
+
+.bg{
+    height: 100vh;
+}
+.bg-left{
+    background-color: $lightPink;
+    padding-left: 80px;
+}
+
+.bg-right{
+    background-color: $deepBlue;
+}
