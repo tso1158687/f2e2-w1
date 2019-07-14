@@ -16,9 +16,17 @@ $deepPink:#FF4384;
 $lightPink:#FFEDF7;
 $deepBlue:#003164;
 $white:#ffffff;
-
+// mixin
+@mixin center() {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
 .bg{
     height: 100vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 .bg-left{
     background-color: $lightPink;
@@ -27,4 +35,58 @@ $white:#ffffff;
 
 .bg-right{
     background-color: $deepBlue;
+}
+
+.play-button-container{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 50vh;
+    height: 50vh;
+    min-width: 350px;
+    min-height: 350px;
+    transform: translate(50%, -50%);
+    z-index: 1;
+    cursor: pointer;
+    .play-button{
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        background-color: $deepPink;
+        position: relative;
+        .play-icon{
+            display: inline-block;
+            @include center();
+            width: 96px;
+            height: 96px;
+            border-radius: 100%;
+            background-color: $white;
+            i{
+                @include center();
+                color:$deepPink;
+            }
+            
+        }
+    }
+}
+.add-todo{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 16px;
+    &.input-group{
+        width: 445px;
+        .btn-add{
+            background-color: $white;
+            border: 0;
+        }
+    }
+    input{
+        height: 56px;
+        border: 0;
+        &::placeholder
+        {   
+            font-style: italic;
+            color:$deepPink;
+        }
+    }
 }
