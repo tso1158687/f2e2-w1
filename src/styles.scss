@@ -90,3 +90,40 @@ $white:#ffffff;
         }
     }
 }
+@mixin todoText {
+    color: $deepBlue;
+    font-weight: bold;
+    padding-left: 10px;
+    display: inline-block;
+    vertical-align: super;
+}
+.todo{
+    .first{
+        p{
+            @include todoText();
+            font-size: 24px;
+        }
+    }
+    .timer{
+        color: $deepPink;
+        font-weight: bold;
+        font-size: 176px;
+    }
+    .secondary{
+        margin-top: 20vh;
+        >div{
+            width: 100%;
+            max-width: 500px;
+            border-bottom: 1px solid #393b3e;
+            margin-top: 10px;
+            p{
+                @include todoText();
+                font-size:16px;
+            }
+            .fa-play-circle-o{
+                float: right;
+            }
+        }
+        
+    }
+}
